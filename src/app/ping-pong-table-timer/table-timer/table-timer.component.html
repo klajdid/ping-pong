@@ -1,0 +1,25 @@
+<div class="container">
+  <section class="timer-counter-label">
+    <div *ngIf="counter" [ngClass]="{blink: !running}">
+      <span>{{hours}}:</span><span>{{minutes}}:</span><span>{{seconds}}</span></div>
+    <div *ngIf="!counter">
+      <!-- <span class="blink timer-start-text">Press Start</span> -->
+      <!-- <br> -->
+      <span>{{hours}}:</span><span>{{minutes}}:</span><span>{{seconds}}</span>
+    </div>
+    <div>
+      <span>{{this.payment}}</span> <span> Lekë</span>
+    </div>
+
+    <div>
+      <span>Filloi: </span> <span>{{this.timeStarted | date: 'H:mm'}}</span>
+    </div>
+
+  </section>
+  <div class="timer-button-container" *ngIf="showTimerControls">
+    <button class="timer-button" (click)="startTimer()">
+      {{ startText }}
+    </button>
+    <button class="timer-button" (click)="clearTimer()">Paguar</button>
+  </div>
+</div>
